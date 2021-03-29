@@ -1,0 +1,20 @@
+doctype html
+html(lang="ja")
+    head
+        meta(charset="UTF-8")
+        title 65536ch
+    body
+        h1 65536ch
+        a(href="logout") Logout
+        h2 New Post
+        form(method="post" action="/posts")
+            div
+                textarea(name="content" cols=40 rows=4)
+            div
+                button(type="submit") Submit
+        
+        h2 Previous Posts
+        each post in posts
+            p #{post.content}
+            p Posted on: #{post.createdAt}
+            hr
